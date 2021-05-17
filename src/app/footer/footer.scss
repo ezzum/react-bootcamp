@@ -1,0 +1,18 @@
+$footerFontColor: #fff;
+
+@font-face {
+  font-family: 'Ubuntu-Regular';
+  src: url(../../assets/Fonts/Ubuntu-Regular.ttf);
+}
+
+.app__footer {
+  width: 100%;
+
+  .app__copyright {
+    width: fit-content;
+    color: $footerFontColor;
+    font-size: 14px;
+    font-family: Ubuntu-Regular;
+    margin: 0 auto 16px;
+  }
+}
