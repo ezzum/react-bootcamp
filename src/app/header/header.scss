@@ -1,0 +1,28 @@
+$titleFontColor: #fff;
+
+@font-face {
+  font-family: 'Ubuntu-Bold';
+  src: url('../../assets/Fonts/Ubuntu-Bold.ttf');
+}
+
+.app__header {
+  color: $titleFontColor;
+  font-family: Ubuntu-Bold;
+
+  .app__title {
+    font-size: 102px;
+    width: 775px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 65px;
+  }
+
+  .title__weather {
+    align-self: flex-start;
+    line-height: 90px;
+  }
+  .title__forecast {
+    align-self: flex-end;
+    line-height: 90px;
+  }
+}
