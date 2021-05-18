@@ -1,5 +1,10 @@
 $appBackgroundColor: #373af5;
 
+@font-face {
+  font-family: 'Ubuntu-Bold';
+  src: url('../assets/Fonts/Ubuntu-Bold.ttf');
+}
+
 * {
   margin: 0;
   border: 0;

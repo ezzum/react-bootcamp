@@ -6,7 +6,7 @@ import ForecastHistory from '../forecast-history/forecast-history'
 
 const Main: React.FC = () => {
   return (
-    <main className="app__main">
+    <main className="app__main main">
       <Forecast7Days />
       <ForecastHistory />
     </main>
