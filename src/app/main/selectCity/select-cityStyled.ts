@@ -16,6 +16,8 @@ export const Wrapper = styled.div`
   position: relative;
   width: 252px;
   font-family: Ubuntu-Regular;
+  z-index: 5;
+
   &::after {
     content: '';
     position: absolute;
