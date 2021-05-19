@@ -10,14 +10,12 @@ export const Wrapper = styled.div`
   box-shadow: 0px 4px 4px rgba(4, 5, 73, 0.25),
     14px 14px 20px rgba(5, 6, 114, 0.2);
   border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
+  position: relative;
 `
 
 export const Title = styled.h2`
   font-family: Ubuntu-Bold;
   font-size: 32px;
   color: ${titleFontColor};
+  margin: 50px 0 0 58px;
 `

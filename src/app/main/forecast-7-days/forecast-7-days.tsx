@@ -1,4 +1,5 @@
 import React from 'react'
+import SelectCity from '../selectCity/select-city'
 
 import { Wrapper, Title } from './forecast-7-daysStyled'
 
@@ -6,13 +7,7 @@ const Forecast7Days: React.FC = () => {
   return (
     <Wrapper className="main__forecast-7-days">
       <Title>7 Days Forecast</Title>
-      <select>
-        <option selected disabled hidden>
-          Select city
-        </option>
-        <option>Самара</option>
-        <option>Тольтти</option>
-      </select>
+      <SelectCity />
       <div className="placeholder">
         <div className="placeholder__img"></div>
         <p className="placeholder__text">
