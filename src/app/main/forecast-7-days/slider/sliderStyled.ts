@@ -4,8 +4,7 @@ export const Wrapper = styled.div`
   width: 82%;
   height: 270px;
   display: flex;
-  margin: 0 auto;
-  overflow: hidden;
+  margin: 50px auto 0;
 `
 
 export const Card = styled.div`
@@ -19,4 +18,38 @@ export const Card = styled.div`
   border-radius: 8px;
   margin-right: 10px;
   flex-shrink: 0;
+  position: relative;
 `
+export const Temp = styled.div`
+  color: #fff;
+  font-size: 32px;
+  font-family: Ubuntu-Bold;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+`
+
+export const WeatherIcon = styled.div`
+  width: 120px;
+  height: 120px;
+  background-image: ${(props: IProps) =>
+    `url(http://openweathermap.org/img/wn/${props.icon}@2x.png)`};
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+`
+export const Date = styled.div`
+  color: #fff;
+  font-size: 16px;
+  font-family: Ubuntu-Bold;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+`
+
+interface IProps {
+  icon: string
+}
