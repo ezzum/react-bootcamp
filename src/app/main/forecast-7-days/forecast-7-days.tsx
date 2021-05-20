@@ -4,13 +4,14 @@ import { useSelector } from 'react-redux'
 import Placeholder from '../placeholder/placeholder'
 import SelectCity from '../selectCity/select-city'
 import { Wrapper, Title } from './forecast-7-daysStyled'
+import Slider from './slider/slider'
 
 const Forecast7Days: React.FC = () => {
   const selectedCity = useSelector(
     (state: IState) => state.selectCity.selectedCity.city
   )
 
-  let fragment = null
+  let fragment = <Slider />
 
   if (selectedCity === 'Select city') {
     fragment = <Placeholder border={'1px dashed #8083a4'} />
