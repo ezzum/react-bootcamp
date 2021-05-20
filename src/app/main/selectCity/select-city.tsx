@@ -1,7 +1,11 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
-import { CityClick, SelectCityClick } from '../../../redux/actions'
+import {
+  CityClick,
+  SelectCityClick,
+  GetForecast7Days
+} from '../../../redux/actions'
 import { ICity, IState } from './interfaces'
 import { Wrapper, SelectedCity, Value, Ul, Li } from './select-cityStyled'
 
@@ -20,9 +24,10 @@ const SelectCity: React.FC = () => {
     return (
       <Li
         key={item.city}
-        onClick={(event: React.SyntheticEvent) =>
+        onClick={(event: React.SyntheticEvent) => {
           dispatch(CityClick(event.currentTarget.textContent, cityItems))
-        }
+          dispatch(GetForecast7Days(item))
+        }}
       >
         {item.city}
       </Li>

@@ -1,17 +1,35 @@
 import React from 'react'
+
+import { useSelector } from 'react-redux'
 import Placeholder from '../placeholder/placeholder'
 import SelectCity from '../selectCity/select-city'
-
 import { Wrapper, Title } from './forecast-7-daysStyled'
 
 const Forecast7Days: React.FC = () => {
+  const selectedCity = useSelector(
+    (state: IState) => state.selectCity.selectedCity.city
+  )
+
+  let fragment = null
+
+  if (selectedCity === 'Select city') {
+    fragment = <Placeholder border={'1px dashed #8083a4'} />
+  }
   return (
     <Wrapper className="main__forecast-7-days">
       <Title>7 Days Forecast</Title>
       <SelectCity />
-      <Placeholder border={'1px dashed #8083a4'} />
+      {fragment}
     </Wrapper>
   )
 }
 
 export default Forecast7Days
+
+interface IState {
+  selectCity: {
+    selectedCity: {
+      city: string
+    }
+  }
+}

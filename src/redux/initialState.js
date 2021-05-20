@@ -1,5 +1,6 @@
 export const initialState = {
   selectCity: {
+    isSelected: false,
     isOpen: false,
     selectedCity: {
       city: 'Select city',
@@ -33,5 +34,6 @@ export const initialState = {
         longitude: 38.975313
       }
     ]
-  }
+  },
+  daysForecast: []
 }

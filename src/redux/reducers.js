@@ -1,4 +1,4 @@
-import { CITY_CLICK, SELECT_CITY_CLICK } from './types'
+import { CITY_CLICK, SELECT_CITY_CLICK, GET_FORECAST_7_DAYS } from './types'
 import { initialState } from './initialState'
 
 export function rootReducer(state = initialState, action) {
@@ -18,6 +18,11 @@ export function rootReducer(state = initialState, action) {
           ...state.selectCity,
           selectedCity: action.value
         }
+      }
+    case GET_FORECAST_7_DAYS:
+      return {
+        ...state,
+        daysForecast: action.value
       }
     default:
       return state
