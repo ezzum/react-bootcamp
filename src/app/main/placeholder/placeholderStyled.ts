@@ -1,10 +1,7 @@
 import styled from 'styled-components'
 
 import placeholderImg from '../../../assets/Placeholder/Academy-Weather-bg160.png'
-
-interface IProps {
-  border: string
-}
+import { IPropsImg } from './interfaces'
 
 export const Wrapper = styled.div`
   width: 440px;
@@ -24,7 +21,7 @@ export const Img = styled.div`
   height: 160px;
   margin-bottom: 30px;
   letter-spacing: 0.7px;
-  border: ${(props: IProps) => props.border};
+  border: ${(props: IPropsImg) => props.styled};
 `
 export const Text = styled.p`
   color: #8083a4;

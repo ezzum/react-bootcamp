@@ -1,11 +1,13 @@
+/* eslint-disable react/prop-types */
 import React from 'react'
 
 import { Wrapper, Img, Text } from './placeholderStyled'
+import { IProps } from './interfaces'
 
-const Placeholder: React.FC = () => {
+const Placeholder: React.FC<IProps> = ({ border }) => {
   return (
     <Wrapper className="placeholder">
-      <Img border={'1px dashed #8083a4'} className="placeholder__img"></Img>
+      <Img styled={border} className="placeholder__img"></Img>
       <Text className="placeholder__text">
         Fill in all the Fields and weather wil be displayed
       </Text>

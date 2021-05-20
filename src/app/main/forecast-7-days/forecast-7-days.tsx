@@ -9,7 +9,7 @@ const Forecast7Days: React.FC = () => {
     <Wrapper className="main__forecast-7-days">
       <Title>7 Days Forecast</Title>
       <SelectCity />
-      <Placeholder />
+      <Placeholder border={'1px dashed #8083a4'} />
     </Wrapper>
   )
 }
