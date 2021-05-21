@@ -1,10 +1,17 @@
 import styled from 'styled-components'
 
+import arrowLeft from '../../../../assets/icons/24/chevron-left@2x.png'
+import arrowRight from '../../../../assets/icons/24/chevron-left@2x-1.png'
+
 export const Wrapper = styled.div`
-  width: 82%;
+  width: 100%;
   height: 270px;
   display: flex;
-  margin: 50px auto 0;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  bottom: 40px;
+  transform: translate(-50%, 0);
 `
 
 export const Card = styled.div`
@@ -48,6 +55,27 @@ export const Date = styled.div`
   position: absolute;
   left: 20px;
   top: 20px;
+`
+export const ArrowLeft = styled.div`
+  width: 24px;
+  height: 50px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(${arrowLeft});
+  position: relative;
+  left: -6px;
+  top: 95px;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+`
+export const ArrowRight = styled(ArrowLeft)`
+  background-image: url(${arrowRight});
+  left: 6px;
 `
 
 interface IProps {

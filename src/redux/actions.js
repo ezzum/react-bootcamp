@@ -25,7 +25,14 @@ export const GetForecast7Days = (city) => {
       const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=current,minutely,hourly,alerts&units=metric&appid=${key}`
       const response = await axios.get(url)
 
-      dispatch({ type: GET_FORECAST_7_DAYS, value: response.data.daily })
+      const data = response.data.daily.map((item, index) => {
+        return {
+          ...item,
+          visible: index < 3
+        }
+      })
+
+      dispatch({ type: GET_FORECAST_7_DAYS, value: data })
     } catch (error) {
       return null
     }

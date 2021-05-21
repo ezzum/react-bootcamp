@@ -1,10 +1,19 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { Wrapper, Card, Temp, WeatherIcon, Date } from './sliderStyled'
+import {
+  Wrapper,
+  Card,
+  Temp,
+  WeatherIcon,
+  Date,
+  ArrowLeft,
+  ArrowRight
+} from './sliderStyled'
 
 const Slider: React.FC = () => {
-  const forecast = useSelector((state: IState) => state.daysForecast).map(
-    (item: IItem, index) => {
+  const forecast = useSelector((state: IState) => state.daysForecast)
+    .filter((item: IItem) => item.visible)
+    .map((item: IItem, index) => {
       const date = new window.Date(item.dt * 1000)
       const renderDate = `${date.getDate()} ${date
         .toLocaleString('en', {
@@ -22,9 +31,14 @@ const Slider: React.FC = () => {
           <Temp>{renderTemp}&deg;</Temp>
         </Card>
       )
-    }
+    })
+  return (
+    <Wrapper className="slider">
+      <ArrowLeft />
+      {forecast}
+      <ArrowRight />
+    </Wrapper>
   )
-  return <Wrapper className="slider">{forecast}</Wrapper>
 }
 
 export default Slider
@@ -43,4 +57,5 @@ interface IItem {
       icon: string
     }
   ]
+  visible: boolean
 }
