@@ -13,17 +13,17 @@ export function rootReducer(state = initialState, action) {
     case SELECT_CITY_CLICK:
       return {
         ...state,
-        selectCity: {
-          ...state.selectCity,
-          isOpen: !state.selectCity.isOpen
+        [action.value]: {
+          ...state[action.value],
+          isOpen: !state[action.value].isOpen
         }
       }
     case CITY_CLICK:
       return {
         ...state,
-        selectCity: {
-          ...state.selectCity,
-          selectedCity: action.value
+        [action.value.parent]: {
+          ...state[action.value.parent],
+          selectedCity: action.value.selectedCity
         }
       }
     case GET_FORECAST_7_DAYS:

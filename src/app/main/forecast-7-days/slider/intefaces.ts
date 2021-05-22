@@ -1,4 +1,11 @@
 export interface IState {
+  Forecast7DaysSelect: {
+    selectedCity: {
+      city: string
+      latitude: number
+      longitude: number
+    }
+  }
   daysForecast: []
   arrow: {
     left: boolean
