@@ -48,6 +48,7 @@ export const SelectedCity = styled.div`
 export const Value = styled.p`
   color: ${(props: IPropsValue) =>
     props.selectedCity === 'Select city' ? '#8083A4' : '#2C2D76'};
+  margin: 0;
 `
 
 export const Ul = styled.ul`
