@@ -1,15 +1,21 @@
 export interface IState {
-  selectCity: {
+  Forecast7DaysSelect: {
     isOpen: boolean
     selectedCity: ICity
-    cityItems: ICity[]
   }
+  cityItems: ICity[]
 }
 
 export interface ICity {
   city: string
   latitude: number
   longitude: number
+}
+
+export interface IProps {
+  isOpen: boolean
+  selectedCity: ICity
+  parent: string
 }
 
 export interface IEvent {

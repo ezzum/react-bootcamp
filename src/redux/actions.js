@@ -9,18 +9,19 @@ import {
   END_SLIDE
 } from './types'
 
-export const SelectCityClick = () => {
+export const SelectCityClick = (parent) => {
   return {
-    type: SELECT_CITY_CLICK
+    type: SELECT_CITY_CLICK,
+    value: parent
   }
 }
 
-export const CityClick = (city, cityItems) => {
+export const CityClick = (city, cityItems, parent) => {
   const selectedCity = cityItems.find((item) => item.city === city)
 
   return {
     type: CITY_CLICK,
-    value: selectedCity
+    value: { selectedCity, parent }
   }
 }
 

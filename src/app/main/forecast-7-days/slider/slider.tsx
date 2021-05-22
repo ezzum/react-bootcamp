@@ -2,7 +2,12 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
 import { IState, IItem } from './intefaces'
-import { RightClick, LeftClick, EndSlide } from '../../../../redux/actions'
+import {
+  RightClick,
+  LeftClick,
+  EndSlide,
+  GetForecast7Days
+} from '../../../../redux/actions'
 import {
   Wrapper,
   Card,
@@ -16,10 +21,15 @@ import {
 const Slider: React.FC = () => {
   const dispatch = useDispatch()
 
+  const city = useSelector(
+    (state: IState) => state.Forecast7DaysSelect.selectedCity
+  )
   const arrow = useSelector((state: IState) => state.arrow)
-
   const forecast = useSelector((state: IState) => state.daysForecast)
 
+  useEffect(() => {
+    dispatch(GetForecast7Days(city))
+  }, [city])
   useEffect(() => {
     dispatch(EndSlide(forecast))
   }, [forecast])
