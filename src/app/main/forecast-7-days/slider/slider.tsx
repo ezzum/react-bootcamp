@@ -1,5 +1,7 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+
+import { RightClick, LeftClick, EndSlide } from '../../../../redux/actions'
 import {
   Wrapper,
   Card,
@@ -11,7 +13,17 @@ import {
 } from './sliderStyled'
 
 const Slider: React.FC = () => {
+  const dispatch = useDispatch()
+
+  const arrow = useSelector((state: IState) => state.arrow)
+
   const forecast = useSelector((state: IState) => state.daysForecast)
+
+  useEffect(() => {
+    dispatch(EndSlide(forecast))
+  }, [forecast])
+
+  const forecastFiltered = forecast
     .filter((item: IItem) => item.visible)
     .map((item: IItem, index) => {
       const date = new window.Date(item.dt * 1000)
@@ -34,9 +46,15 @@ const Slider: React.FC = () => {
     })
   return (
     <Wrapper className="slider">
-      <ArrowLeft />
-      {forecast}
-      <ArrowRight />
+      <ArrowLeft
+        left={arrow.left}
+        onClick={() => dispatch(LeftClick(forecast))}
+      />
+      {forecastFiltered}
+      <ArrowRight
+        right={arrow.right}
+        onClick={() => dispatch(RightClick(forecast))}
+      />
     </Wrapper>
   )
 }
@@ -45,6 +63,10 @@ export default Slider
 
 interface IState {
   daysForecast: []
+  arrow: {
+    left: boolean
+    right: boolean
+  }
 }
 
 interface IItem {

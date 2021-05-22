@@ -35,5 +35,13 @@ export const initialState = {
       }
     ]
   },
-  daysForecast: []
+  daysForecast: [
+    {
+      visible: false
+    }
+  ],
+  arrow: {
+    left: true,
+    right: true
+  }
 }

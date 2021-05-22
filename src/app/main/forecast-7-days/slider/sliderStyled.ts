@@ -69,15 +69,41 @@ export const ArrowLeft = styled.div`
   cursor: pointer;
   transition: 0.2s;
 
+  pointer-events: ${(props: IArrowLeftProps) => (props.left ? 'auto' : 'none')};
+  opacity: ${(props: IArrowLeftProps) => (props.left ? 1 : 0.3)};
+
   &:hover {
     transform: scale(1.2);
   }
 `
-export const ArrowRight = styled(ArrowLeft)`
+export const ArrowRight = styled.div`
+  width: 24px;
+  height: 50px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
   background-image: url(${arrowRight});
+  position: relative;
   left: 6px;
+  top: 95px;
+  cursor: pointer;
+  transition: 0.2s;
+
+  pointer-events: ${(props: IArrowRightProps) =>
+    props.right ? 'auto' : 'none'};
+  opacity: ${(props: IArrowRightProps) => (props.right ? 1 : 0.3)};
+
+  &:hover {
+    transform: scale(1.2);
+  }
 `
 
 interface IProps {
   icon: string
+}
+interface IArrowLeftProps {
+  left: boolean
+}
+interface IArrowRightProps {
+  right: boolean
 }
