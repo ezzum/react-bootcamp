@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
+import { IState, IItem } from './intefaces'
 import { RightClick, LeftClick, EndSlide } from '../../../../redux/actions'
 import {
   Wrapper,
@@ -10,7 +11,7 @@ import {
   Date,
   ArrowLeft,
   ArrowRight
-} from './sliderStyled'
+} from './slider-styled'
 
 const Slider: React.FC = () => {
   const dispatch = useDispatch()
@@ -27,6 +28,7 @@ const Slider: React.FC = () => {
     .filter((item: IItem) => item.visible)
     .map((item: IItem, index) => {
       const date = new window.Date(item.dt * 1000)
+
       const renderDate = `${date.getDate()} ${date
         .toLocaleString('en', {
           month: 'short'
@@ -60,24 +62,3 @@ const Slider: React.FC = () => {
 }
 
 export default Slider
-
-interface IState {
-  daysForecast: []
-  arrow: {
-    left: boolean
-    right: boolean
-  }
-}
-
-interface IItem {
-  dt: number
-  temp: {
-    day: number
-  }
-  weather: [
-    {
-      icon: string
-    }
-  ]
-  visible: boolean
-}

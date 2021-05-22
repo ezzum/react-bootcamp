@@ -7,7 +7,7 @@ import {
   GetForecast7Days
 } from '../../../redux/actions'
 import { ICity, IState } from './interfaces'
-import { Wrapper, SelectedCity, Value, Ul, Li } from './select-cityStyled'
+import { Wrapper, SelectedCity, Value, Ul, Li } from './select-city-styled'
 
 const SelectCity: React.FC = () => {
   const dispatch = useDispatch()

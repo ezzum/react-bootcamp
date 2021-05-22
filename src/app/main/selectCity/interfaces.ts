@@ -17,3 +17,11 @@ export interface IEvent {
     textContent: string
   }
 }
+
+export interface IPropsWrapper {
+  IsOpen: boolean
+}
+
+export interface IPropsValue {
+  selectedCity: string
+}

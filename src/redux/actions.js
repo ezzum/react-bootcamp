@@ -94,7 +94,6 @@ export const LeftClick = (days) => {
 
 export const EndSlide = (days) => {
   if (days[0].visible) {
-    console.log('1')
     return {
       type: END_SLIDE,
       value: {
@@ -105,7 +104,6 @@ export const EndSlide = (days) => {
   }
 
   if (days[days.length - 1].visible) {
-    console.log('2')
     return {
       type: END_SLIDE,
       value: {
@@ -114,7 +112,7 @@ export const EndSlide = (days) => {
       }
     }
   }
-  console.log('3')
+
   return {
     type: END_SLIDE,
     value: {

@@ -1,5 +1,10 @@
 import styled from 'styled-components'
 
+import {
+  IWeatherIconProps,
+  IArrowLeftProps,
+  IArrowRightProps
+} from './intefaces'
 import arrowLeft from '../../../../assets/icons/24/chevron-left@2x.png'
 import arrowRight from '../../../../assets/icons/24/chevron-left@2x-1.png'
 
@@ -39,7 +44,7 @@ export const Temp = styled.div`
 export const WeatherIcon = styled.div`
   width: 120px;
   height: 120px;
-  background-image: ${(props: IProps) =>
+  background-image: ${(props: IWeatherIconProps) =>
     `url(http://openweathermap.org/img/wn/${props.icon}@2x.png)`};
   background-repeat: no-repeat;
   background-position: center;
@@ -97,13 +102,3 @@ export const ArrowRight = styled.div`
     transform: scale(1.2);
   }
 `
-
-interface IProps {
-  icon: string
-}
-interface IArrowLeftProps {
-  left: boolean
-}
-interface IArrowRightProps {
-  right: boolean
-}

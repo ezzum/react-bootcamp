@@ -2,14 +2,7 @@ import styled from 'styled-components'
 
 import chevronTop from '../../../assets/icons/16/chevron-top.png'
 import chevronBottom from '../../../assets/icons/16/chevron-bottom.png'
-
-interface IPropsWrapper {
-  IsOpen: boolean
-}
-
-interface IPropsValue {
-  selectedCity: string
-}
+import { IPropsValue, IPropsWrapper } from './interfaces'
 
 export const Wrapper = styled.div`
   margin: 32px 0 0 58px;

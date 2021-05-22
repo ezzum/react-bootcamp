@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
 
-import { Wrapper, Img, Text } from './placeholderStyled'
+import { Wrapper, Img, Text } from './placeholder-styled'
 import { IProps } from './interfaces'
 
 const Placeholder: React.FC<IProps> = ({ border }) => {
