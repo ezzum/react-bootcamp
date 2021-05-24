@@ -4,7 +4,9 @@ import {
   GET_FORECAST_7_DAYS,
   RIGHT_CLICK,
   LEFT_CLICK,
-  END_SLIDE
+  END_SLIDE,
+  CHANGE_DATE,
+  GET_FORECAST_HISTORY
 } from './types'
 import { initialState } from './initialState'
 
@@ -45,6 +47,16 @@ export function rootReducer(state = initialState, action) {
       return {
         ...state,
         arrow: action.value
+      }
+    case CHANGE_DATE:
+      return {
+        ...state,
+        datePicker: action.value
+      }
+    case GET_FORECAST_HISTORY:
+      return {
+        ...state,
+        historyForecast: action.value
       }
     default:
       return state

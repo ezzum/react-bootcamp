@@ -1,5 +1,5 @@
 export interface IState {
-  Forecast7DaysSelect: {
+  ForecastHistorySelect: {
     isOpen: boolean
     selectedCity: {
       city: string
@@ -7,4 +7,5 @@ export interface IState {
       longitude: number
     }
   }
+  datePicker: string
 }

@@ -2,7 +2,6 @@ $titleFontColor: #fff;
 
 .app__header {
   width: 100%;
-  color: $titleFontColor;
   font-family: Ubuntu-Bold;
 
   .app__title {
@@ -11,6 +10,7 @@ $titleFontColor: #fff;
     display: flex;
     flex-direction: column;
     margin: 65px auto 0;
+    color: $titleFontColor;
   }
 
   .title__weather {

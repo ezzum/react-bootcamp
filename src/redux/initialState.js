@@ -16,6 +16,7 @@ export const initialState = {
       longitude: 0
     }
   },
+  datePicker: '',
   cityItems: [
     {
       city: 'Samara',
@@ -48,6 +49,9 @@ export const initialState = {
       visible: false
     }
   ],
+  historyForecast: {
+    weather: [{ icon: '' }]
+  },
   arrow: {
     left: true,
     right: true
