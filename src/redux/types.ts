@@ -1,0 +1,8 @@
+export const SELECT_CITY_CLICK: string = 'SELECT_CITY_CLICK'
+export const CITY_CLICK: string = 'CITY_CLICK'
+export const GET_FORECAST_7_DAYS: string = 'GET_FORECAST_7_DAYS'
+export const RIGHT_CLICK: string = 'RIGHT_CLICK'
+export const LEFT_CLICK: string = 'LEFT_CLICK'
+export const END_SLIDE: string = 'END_SLIDE'
+export const CHANGE_DATE: string = 'CHANGE_DATE'
+export const GET_FORECAST_HISTORY: string = 'GET_FORECAST_HISTORY'
